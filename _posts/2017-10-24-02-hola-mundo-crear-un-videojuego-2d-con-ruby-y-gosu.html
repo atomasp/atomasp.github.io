@@ -1,0 +1,12 @@
+---
+layout: post
+title: 02 Hola mundo - Crear un videojuego 2D con Ruby y Gosu
+date: '2017-10-24T19:25:00.000+02:00'
+author: AITOR TOMAS PIN
+tags: 
+modified_time: '2017-12-29T18:49:30.854+01:00'
+blogger_id: tag:blogger.com,1999:blog-611028137431305192.post-5461420775060746042
+blogger_orig_url: http://compupiensaumh.blogspot.com/2017/10/02-hola-mundo-crear-un-videojuego-2d-con-ruby-y-gosu.html
+---
+
+En los posts anteriores hemos visto como crear un videojuego utilizando Ruby y la gema Gosu:<br />- <a href="https://compupiensaumh.blogspot.com.es/2017/10/01-prerrequisitos-crear-un-videojuego-2d-con-ruby-y-gosu.html">01 Prerrequisitos</a>: Los prerrequisitos iniciales para poder comenzar a desarrollar nuestro juego con Ruby y Gosu.<br /><br />Tras la instalación de la gema de Gosu como hemos visto en el post anterior, vamos a proceder a crear nuestro primer juego, el juego "Hola mundo!".<br /><br />Para ello, crearemos con nuestro editor de código favorito un archivo con extensión ".rb" que contendrá el siguiente código: <br /><div class="codebox"><pre><br /><span>require 'gosu'</span><br /><span></span><br /><span>class Juego < Gosu::Window</span><br /><span>  def initialize</span><br /><span>    super 640, 480</span><br /><span>    self.caption = "Hola mundo!"</span><br /><span>  end</span><br /><span></span><br /><span>  def update</span><br /><span>  end</span><br /><span></span><br /><span>  def draw</span><br /><span>  end</span><br /><span>end</span><br /><span></span><br /><span>window = Juego.new</span><br /><span>window.show</span><br /></pre></div><br />Esta es la estructura básica de un programa en Gosu, primero añadimos la librería de Gosu y posteriormente creamos una clase ("Juego" en nuestro ejemplo) que hereda de "Gosu::Window". Esta clase contiene, a parte del constructor (método "initialize()"), otros dos métodos "update()" y "show()" que sobrescriben los métodos definidos por "Gosu::Window".<br /><br />"update()" se ejecuta 60 veces por segundo por defecto y tiene que contener la lógica del juego. Por otro lado, "draw()" se ejecuta a continuación de "update()" y debe contener el código para redibujar la pantalla, pero no debe actualizar ningún estado del juego.<br /><br />Para poder ejecutar el juego tenemos que crear un nuevo objeto "Juego" y llamar al método "show()". Esto mostrará la ventana del juego hasta que se cierre o se llame al método "close()".
